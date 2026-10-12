@@ -15,7 +15,8 @@ import {
 } from 'lucide-react'
 import { whatsappLink } from './config'
 
-const imagePath = (fileName: string) => `/images/bebes/${fileName}`
+const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const imagePath = (fileName: string) => assetPath(`images/bebes/${fileName}`)
 
 const babies = [
   {
@@ -151,7 +152,7 @@ function App() {
       <header className="site-header">
         <div className="container header-inner">
           <a className="brand" href="#inicio" aria-label="Dudinha Hikari - inicio">
-            <img src="/images/logo.jpg" alt="Logomarca original Maternidade Reborn Dudinha Hikari" />
+            <img src={assetPath('images/logo.jpg')} alt="Logomarca original Maternidade Reborn Dudinha Hikari" />
             <span>
               <strong>Dudinha Hikari</strong>
               <small>MATERNIDADE REBORN</small>
@@ -296,7 +297,7 @@ function App() {
           <div className="container story-grid">
             <div className="story-art">
               <div className="story-art-inner">
-                <img src="/images/bebes/autora.jpg" alt="Autora da Maternidade Reborn Dudinha Hikari" />
+                <img src={assetPath('images/bebes/autora.jpg')} alt="Autora da Maternidade Reborn Dudinha Hikari" />
               </div>
               <span className="story-small-label">A AUTORA</span>
             </div>
@@ -397,7 +398,7 @@ function App() {
         <div className="container">
           <div className="footer-top">
             <div className="footer-brand">
-              <img src="/images/logo.jpg" alt="Maternidade Reborn Dudinha Hikari" />
+              <img src={assetPath('images/logo.jpg')} alt="Maternidade Reborn Dudinha Hikari" />
               <div>
                 <strong>Dudinha Hikari</strong>
                 <span>Maternidade Reborn</span>
